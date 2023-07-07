@@ -156,6 +156,7 @@ public class ChessMain {
         int xKoordinata = scanner.nextInt();
         int yKoordinata = scanner.nextInt();
 
+        if (xKoordinata >= 1 && xKoordinata <= 8 && yKoordinata >= 1 && xKoordinata <= 8){
         if (CheckMovePositionFree(selectedElement, xKoordinata, yKoordinata) == true) {
             selectedElement.MovePositionPiece(xKoordinata, yKoordinata);
             // selectedElement.xPosition = xKoordinata;
@@ -168,6 +169,9 @@ public class ChessMain {
                     " moved to: " + selectedElement.xPosition +
                     ", " + selectedElement.yPosition);
         }
+    }else{
+        System.out.println("enter numbers from 1 to 8");
+    }
     }
 
     public static boolean CheckMovePositionFree(AbstractElement selectedElement, int x2, int y2) {
